@@ -16,6 +16,13 @@ document.querySelectorAll(".tab").forEach(btn => {
     });
 });
 
+document
+    .getElementById("searchInput")
+    .addEventListener(
+        "keyup",
+        filterTable
+    );
+
 addBtn.addEventListener("click", async () => {
 
     const nomorPesanan =
