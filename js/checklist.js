@@ -10,7 +10,18 @@ async function checkDaily(id) {
 
     if (error || !data) {
         return;
-    }
+            }
+            if (
+            data.paket_terkirim >=
+            data.paket_total
+        ) {
+
+    alert(
+        "Paket sudah selesai"
+    );
+
+    return;
+}
 
     // hanya sekali per hari UTC
     if (data.last_check_utc === todayUTC) {
