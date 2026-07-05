@@ -133,3 +133,9 @@ th,td{
     cursor:pointer;
     margin-left:5px;
 }
+
+#searchInput{
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+}
