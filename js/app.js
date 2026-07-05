@@ -50,13 +50,13 @@ addBtn.addEventListener("click", async () => {
         return;
     }
 
-    const keterangan =
-        `${tagar} | H0/H${paket} | ${
-            whatsapp
-            ? "https://wa.me/" + whatsapp.replace("+","")
-            : ""
-        }`;
-
+        const keterangan =
+            `${currentDashboard} H0/H${paket} | ${tagar} | ${
+                whatsapp
+                ? "https://wa.me/" + whatsapp.replace("+","")
+                : ""
+            }`;
+    
     await supabaseClient
         .from("orders")
         .insert([{
