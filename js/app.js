@@ -42,13 +42,15 @@ addBtn.addEventListener("click", async () => {
         return;
     }
 
-    if (
-        whatsapp &&
-        !/^\+628\d+$/.test(whatsapp)
-    ) {
-        alert("Format WA harus +628...");
-        return;
-    }
+        if (
+            whatsapp &&
+            !validWhatsapp(whatsapp)
+        ) {
+            alert(
+                "Format nomor harus diawali +"
+            );
+            return;
+        }
 
     const keterangan =
         `${tagar} | H0/H${paket} | ${
