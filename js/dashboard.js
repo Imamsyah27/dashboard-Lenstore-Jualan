@@ -1,6 +1,5 @@
 async function loadData() {
     const todayUTC = getUTCDate();
-
     const { data, error } = await supabaseClient
         .from("orders")
         .select("*")
