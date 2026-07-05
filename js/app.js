@@ -44,9 +44,9 @@ addBtn.addEventListener("click", async () => {
 
     if (
         whatsapp &&
-        !/^\+628\d+$/.test(whatsapp)
+        !/^\+\d+$/.test(whatsapp)
     ) {
-        alert("Format WA harus +628...");
+        alert("Format WA harus diawali tanda +...");
         return;
     }
 
