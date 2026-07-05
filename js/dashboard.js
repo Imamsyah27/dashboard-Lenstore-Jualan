@@ -25,6 +25,20 @@ async function loadData() {
 
         const paketText =
             `H${item.paket_terkirim}/H${item.paket_total}`;
+        let status = "";
+            if (
+                item.paket_terkirim >=
+                item.paket_total
+            ) {
+            
+                status =
+                    "✅ Selesai";
+            
+            } else {
+            
+                status =
+                    "⏳ Proses";
+            }
 
         const wa =
             item.nomor_whatsapp || "-";
@@ -49,7 +63,11 @@ async function loadData() {
 
             <td>${wa}</td>
 
-            <td>${paketText}</td>
+            <td>
+                ${paketText}
+                <br>
+                <small>${status}</small>
+            </td>
 
             <td>
 
