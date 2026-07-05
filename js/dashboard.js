@@ -1,4 +1,34 @@
 async function loadData() {
+    const total =
+    data.length;
+
+const selesai =
+    data.filter(
+        x =>
+        x.paket_terkirim >=
+        x.paket_total
+    ).length;
+
+const proses =
+    total - selesai;
+
+document
+    .getElementById(
+        "totalOrder"
+    ).innerText =
+    total;
+
+document
+    .getElementById(
+        "prosesOrder"
+    ).innerText =
+    proses;
+
+document
+    .getElementById(
+        "selesaiOrder"
+    ).innerText =
+    selesai;
 
     const todayUTC = getUTCDate();
 
