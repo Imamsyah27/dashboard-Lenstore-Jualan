@@ -1,9 +1,9 @@
 // Ganti dengan data project Supabase Anda
 
-const SUPABASE_URL = "https://xxxxxxxxxxxxx.supabase.co";
+const SUPABASE_URL = "https://drryamosodluupxbbtee.supabase.co";
 
 const SUPABASE_ANON_KEY =
-"eyJxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRycnlhbW9zb2RsdXVweGJidGVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMzEwMTgsImV4cCI6MjA5ODgwNzAxOH0.q_Dq4w3Ugv7rCq3NeEXSIYEuNCbsG19Ghsj2vo0_TOc";
 
 const supabaseClient = supabase.createClient(
     SUPABASE_URL,
