@@ -60,3 +60,32 @@ function validWhatsapp(
     return /^\+628\d+$/
         .test(nomor);
 }
+
+function filterTable() {
+
+    const value =
+        document
+            .getElementById(
+                "searchInput"
+            )
+            .value
+            .toLowerCase();
+
+    const rows =
+        document
+            .querySelectorAll(
+                "#tableBody tr"
+            );
+
+    rows.forEach(row => {
+
+        const text =
+            row.innerText
+                .toLowerCase();
+
+        row.style.display =
+            text.includes(value)
+            ? ""
+            : "none";
+    });
+}
