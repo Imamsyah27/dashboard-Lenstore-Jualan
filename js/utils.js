@@ -54,8 +54,11 @@ function createKeterangan(
     return `${tagar} | ${paket} | ${wa}`;
 }
 
-function validWhatsapp(nomor) {
-    return /^\+\d{7,15}$/.test(nomor);
+function validWhatsapp(
+    nomor
+) {
+    return /^\+\d+$/
+        .test(nomor);
 }
 
 function filterTable() {
