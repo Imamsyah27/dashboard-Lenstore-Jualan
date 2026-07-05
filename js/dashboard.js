@@ -5,7 +5,7 @@ async function loadData() {
         .select("*")
         .eq("dashboard", currentDashboard)
         .order("id", { ascending: true });
-
+    
     if (error) {
         console.error(error);
         return;
