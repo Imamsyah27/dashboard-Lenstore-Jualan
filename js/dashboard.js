@@ -73,3 +73,19 @@ async function loadData() {
         tbody.appendChild(tr);
     }
 }
+
+async function deleteOrder(id) {
+
+    const confirmDelete =
+        confirm("Hapus data?");
+
+    if (!confirmDelete)
+        return;
+
+    await supabaseClient
+        .from("orders")
+        .delete()
+        .eq("id", id);
+
+    loadData();
+}
