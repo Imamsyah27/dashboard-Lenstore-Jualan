@@ -44,7 +44,7 @@ async function checkDaily(id) {
             : "";
 
     const keterangan =
-        `${data.tagar} | ${paketBaru} | ${wa}`;
+        `${data.dashboard} ${paketBaru} | ${data.tagar} | ${wa}`;
 
     await supabaseClient
         .from("orders")
