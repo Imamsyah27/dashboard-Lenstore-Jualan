@@ -52,14 +52,21 @@ async function loadData() {
             <td>${paketText}</td>
 
             <td>
-                <button
-                    class="check-btn"
-                    onclick="checkDaily(${item.id})"
-                    ${sudahCheck ? "disabled" : ""}>
-                    ✓
-                </button>
-            </td>
 
+    <button
+        class="check-btn"
+        onclick="checkDaily(${item.id})"
+        ${sudahCheck ? "disabled" : ""}>
+        ✓
+    </button>
+
+    <button
+        class="delete-btn"
+        onclick="deleteOrder(${item.id})">
+        🗑
+    </button>
+
+</td>
             <td>${ket}</td>
         `;
 
