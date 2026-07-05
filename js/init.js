@@ -17,6 +17,29 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 });
 
+document.addEventListener(
+    "click",
+    async function(e){
+
+        if(
+            e.target.classList.contains(
+                "copy-keterangan"
+            )
+        ){
+
+            await navigator
+                .clipboard
+                .writeText(
+                    e.target.dataset.copy
+                );
+
+            alert(
+                "Keterangan berhasil disalin"
+            );
+        }
+    }
+);
+
 // refresh data setiap 30 detik
 setInterval(() => {
     loadData();
