@@ -37,14 +37,16 @@ async function checkDaily(id) {
 
     const paketBaru =
         `H${terkirim}/H${data.paket_total}`;
-
+    
     const wa =
         data.nomor_whatsapp
             ? `https://wa.me/${data.nomor_whatsapp.replace("+","")}`
             : "";
-
+    
     const keterangan =
-        `${data.dashboard} ${paketBaru} | ${data.tagar} | ${wa}`;
+        `${data.dashboard} ${paketBaru} | ${data.tagar}${
+            wa ? " | " + wa : ""
+        }`;
 
     await supabaseClient
         .from("orders")
