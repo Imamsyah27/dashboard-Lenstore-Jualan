@@ -57,7 +57,8 @@ function createKeterangan(
 function validWhatsapp(
     nomor
 ) {
-    return /^\+628\d+$/
+
+    return /^\+\d{7,15}$/
         .test(nomor);
 }
 
