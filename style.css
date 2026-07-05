@@ -113,3 +113,13 @@ th,td{
     background:#999;
     cursor:not-allowed;
 }
+
+.delete-btn{
+    background:#d32f2f;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    cursor:pointer;
+    margin-left:5px;
+}
