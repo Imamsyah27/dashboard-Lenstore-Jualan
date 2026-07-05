@@ -136,7 +136,13 @@ async function loadData() {
     </button>
 
 </td>
-            <td>${ket}</td>
+        <td>
+            <span
+                class="copy-keterangan"
+                data-copy="${ket}">
+                ${ket}
+            </span>
+        </td>
         `;
 
         tbody.appendChild(tr);
