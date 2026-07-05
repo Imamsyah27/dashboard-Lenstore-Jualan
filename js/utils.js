@@ -89,3 +89,25 @@ function filterTable() {
             : "none";
     });
 }
+
+async function copyKeterangan(keterangan) {
+
+    try {
+
+        await navigator.clipboard.writeText(
+            keterangan
+        );
+
+        alert(
+            "Keterangan berhasil disalin"
+        );
+
+    } catch (err) {
+
+        console.error(err);
+
+        alert(
+            "Gagal menyalin keterangan"
+        );
+    }
+}
