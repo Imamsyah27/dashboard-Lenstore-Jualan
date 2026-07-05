@@ -67,6 +67,29 @@ async function loadData() {
     </button>
 
 </td>
+
+<td>
+
+    <button
+        class="check-btn"
+        onclick="checkDaily(${item.id})"
+        ${sudahCheck ? "disabled" : ""}>
+        ✓
+    </button>
+
+    <button
+        class="edit-btn"
+        onclick="editOrder(${item.id})">
+        ✏️
+    </button>
+
+    <button
+        class="delete-btn"
+        onclick="deleteOrder(${item.id})">
+        🗑
+    </button>
+
+</td>
             <td>${ket}</td>
         `;
 
@@ -85,6 +108,64 @@ async function deleteOrder(id) {
     await supabaseClient
         .from("orders")
         .delete()
+        .eq("id", id);
+
+    loadData();
+}
+
+async function editOrder(id) {
+
+    const { data } =
+        await supabaseClient
+            .from("orders")
+            .select("*")
+            .eq("id", id)
+            .single();
+
+    const nomor =
+        prompt(
+            "Nomor Pesanan",
+            data.nomor_pesanan
+        );
+
+    const tagar =
+        prompt(
+            "Tagar",
+            data.tagar
+        );
+
+    const wa =
+        prompt(
+            "WhatsApp",
+            data.nomor_whatsapp
+        );
+
+    const paket =
+        prompt(
+            "Jumlah Paket",
+            data.paket_total
+        );
+
+    if (!nomor || !tagar)
+        return;
+
+    const ket =
+        createKeterangan(
+            tagar,
+            data.paket_terkirim,
+            paket,
+            wa
+        );
+
+    await supabaseClient
+        .from("orders")
+        .update({
+            nomor_pesanan: nomor,
+            tagar: tagar,
+            nomor_whatsapp: wa,
+            paket_total: paket,
+            keterangan: ket
+        })
         .eq("id", id);
 
     loadData();
