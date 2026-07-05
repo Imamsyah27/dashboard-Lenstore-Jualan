@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hayday Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>HAYDAY MANAGEMENT DASHBOARD</h1>
+</header>
+
+<nav class="dashboard-tabs">
+    <button class="tab active" data-dashboard="BEM">BEM</button>
+    <button class="tab" data-dashboard="LEM">LEM</button>
+    <button class="tab" data-dashboard="SEM">SEM</button>
+</nav>
+
+<section class="input-section">
+    <input type="text" id="orderNumber" placeholder="Nomer Pesanan">
+    <input type="text" id="hashtag" placeholder="Tagar">
+    <input type="text" id="whatsapp" placeholder="+628xxxx">
+    <input type="number" id="packageTotal" placeholder="Jumlah Paket">
+    <button id="addData">Tambah</button>
+</section>
+
+<section class="table-section">
+    <table id="dashboardTable">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nomer Pesanan</th>
+                <th>Tagar</th>
+                <th>Nomer WhatsApp</th>
+                <th>Jumlah Paket</th>
+                <th>Pengiriman Harian</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+</section>
+
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
